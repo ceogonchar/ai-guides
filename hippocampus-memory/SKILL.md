@@ -13,23 +13,21 @@ description: >-
 
 A brain-inspired memory architecture that makes your AI agent remember like a human — important things persist, routine fades, and critical items are never forgotten.
 
-## Quick Start
-
-After installing this skill, set up the memory structure:
+## One-Click Install
 
 ```bash
-# Run from your workspace root
-mkdir -p memory/{hippocampus,consolidation,weeks,archive}
+bash scripts/install.sh
 ```
 
-Then copy the config and templates from `references/` into your workspace:
+This automatically creates the full memory structure, copies configs, and sets up all files. Safe to re-run — won't overwrite existing data.
 
-```bash
-cp "$(dirname "$0")/../references/config.yaml" memory/hippocampus/
-cp "$(dirname "$0")/../references/state-template.json" memory/consolidation/state.json
-```
-
-Or just tell your agent: **"Set up hippocampus memory system"** — it will read this skill and do it automatically.
+**What gets installed:**
+- `memory/hippocampus/config.yaml` — decay rates, immunity rules, scoring
+- `memory/consolidation/state.json` — shift handoff protocol
+- `memory/decisions.md` — permanent decisions log (never deleted)
+- `memory/facts.md` — people, accounts, infrastructure
+- `MEMORY.md` — long-term curated memory
+- `memory/weeks/` + `memory/archive/` — compression directories
 
 ## Architecture: 4 Memory Tiers
 

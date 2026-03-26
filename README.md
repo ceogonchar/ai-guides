@@ -1,15 +1,23 @@
-# 🤖 AI Практик — Готовые Skills для OpenClaw
+# 🤖 AI Praktik — Ready-to-Use Skills for OpenClaw
 
-Здесь собраны готовые решения для AI-ассистента OpenClaw.
+Production-tested skills for the OpenClaw AI Agent Platform. Each skill is a self-contained package that gives your agent new capabilities.
 
-Каждый skill — это "мозги" для агента под конкретную задачу.
+## Installation (One-Click)
 
-## Как использовать
+```bash
+# 1. Clone this repo
+git clone https://github.com/ceogonchar/ai-guides.git
 
-1. Установи [OpenClaw](https://github.com/openclaw/openclaw)
-2. Скачай нужный skill
-3. Напиши агенту в Telegram что нужно сделать
-4. Готово — агент всё сделает сам
+# 2. Copy any skill to your workspace
+cp -r ai-guides/hippocampus-memory ~/clawd/skills/
+
+# 3. Run the installer (if the skill has one)
+bash ~/clawd/skills/hippocampus-memory/scripts/install.sh
+
+# Done! Your agent now has the skill.
+```
+
+Each skill includes a `scripts/install.sh` that sets up everything automatically — dependencies, configs, templates. Safe to re-run.
 
 ## Доступные skills & guides
 
@@ -20,9 +28,17 @@
 | [memory-system](./memory-system/) | 📖 Detailed memory guide in Russian |
 | [business-valuation](./business-valuation/) | AI-агент оценит твой бизнес и поможет продать на BizBuySell |
 
-## Канал
+## Channel
 
 📱 Telegram: [@ai_praktik_hub](https://t.me/ai_praktik_hub)
 
+## Other Public Skills (separate repos)
+
+| Skill | Description | Install |
+|-------|-------------|---------|
+| [vapi-calling-skill](https://github.com/ceogonchar/vapi-calling-skill) | 📞 AI phone calls — outbound/inbound via VAPI | `git clone` → copy to skills/ |
+| [tesla-control](https://github.com/ceogonchar/tesla-control) | 🏎️ Tesla control via Telegram — lock, climate, charge | `git clone` → copy to skills/ |
+| [garmin-coach](https://github.com/ceogonchar/garmin-coach) | 🏃 AI training coach for Garmin watches | `git clone` → copy to skills/ |
+
 ---
-*Сделано с ❤️ в Miami*
+*Built with ❤️ in Miami by [@Gonchar1735](https://t.me/Gonchar1735)*

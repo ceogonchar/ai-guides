@@ -25,6 +25,22 @@ Level 4: browser-use agent  → AI-driven browser automation (complex multi-step
 
 **Start with Level 1, escalate only when needed.**
 
+## One-Click Install
+
+```bash
+bash scripts/install.sh
+```
+
+This automatically:
+- Creates a Python virtual environment (`tools/browser/.venv`)
+- Installs Camoufox (anti-detect Firefox), Playwright Stealth, browser-use
+- Downloads the Camoufox browser binary
+- Creates `tools/browser/smart_browse.py` ready-to-use script
+- Sets up persistent profile storage (`~/.browser-profiles/`)
+- Verifies all packages installed correctly
+
+Takes ~1-2 minutes. After install, your agent can browse any website autonomously.
+
 ## Level 1: web_fetch (No Setup Required)
 
 For reading page content — no browser needed:
