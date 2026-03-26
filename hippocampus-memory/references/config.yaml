@@ -1,0 +1,106 @@
+# 🧠 Hippocampus Protocol — Configuration
+# Copy this file to: memory/hippocampus/config.yaml
+#
+# Exponential decay formula: retention = importance × e^(-λ × age)
+# Higher λ = forgets faster. Floor = minimum retention (never drops below).
+
+decay_rates:
+  decision:           0.03   # Slow decay — decisions matter long-term
+  user_intent:        0.08   # User requests decay slowly
+  user_emotion:       0.05   # Emotional moments persist
+  task_active:        0.00   # NO DECAY until completed!
+  task_completed:     0.15   # Completed tasks fade
+  tool_result:        0.20   # Tool outputs fade fast
+  cron_notification:  0.40   # Cron/system noise fades fastest
+  ephemeral:          0.50   # Small talk, acknowledgments
+
+retention_floors:
+  decision:           0.60
+  user_intent:        0.40
+  user_emotion:       0.50
+  task_active:        1.00   # NEVER forget active tasks
+  task_completed:     0.10
+  tool_result:        0.05
+  cron_notification:  0.02
+  ephemeral:          0.01
+
+# Who said it matters — weight by source
+source_weights:
+  owner_direct:       1.0    # Owner's direct message
+  owner_voice:        1.0    # Owner's voice note
+  owner_forwarded:    0.7    # Forwarded by owner
+  team_member:        0.6    # Known team members
+  external_person:    0.5    # External contacts
+  tool_output:        0.3    # Tool/API results
+  system_cron:        0.2    # Cron notifications
+
+# Emotional context amplifies or dampens memory
+emotional_modifiers:
+  user_frustrated:    +0.30  # "damn", "again", negative tone
+  user_urgent:        +0.25  # "urgent", "now", "ASAP"
+  user_praise:        +0.20  # "great", "excellent", "nice"
+  task_success:       +0.15  # Successful completion
+  task_failure:       -0.10  # Failure — learn but don't dwell
+  routine_check:      -0.20  # Routine status checks
+
+# Context-specific decay multipliers
+contexts:
+  main_session:
+    decay_multiplier: 0.5    # Slower decay (direct chat)
+    load_memory_md: true
+
+  group_chat:
+    decay_multiplier: 2.0    # Faster decay
+    load_memory_md: false    # Privacy!
+
+  cron_task:
+    decay_multiplier: 3.0    # Very fast decay
+    load_memory_md: false
+
+  subagent:
+    decay_multiplier: 2.0
+    load_memory_md: false
+
+# Items that NEVER decay regardless of score
+immunity_rules:
+  - type: "incomplete_task"
+    decay_rate: 0.0
+    condition: "status != completed"
+
+  - type: "pending_question"
+    decay_rate: 0.01
+    condition: "answered == false"
+
+  - type: "deadline_approaching"
+    decay_rate: 0.0
+    condition: "days_until_deadline < 7"
+
+  - type: "financial_critical"
+    decay_rate: 0.02
+    condition: "tag == money OR tag == debt"
+
+# Consolidation schedule
+consolidation:
+  light:
+    trigger: "every_turn"
+    actions: [recalculate_retention_scores, update_sparse_index]
+
+  deep:
+    trigger: "session_end OR every_50_turns"
+    actions: [compress_low_retention, extract_decisions, update_links]
+
+  archival:
+    trigger: "weekly_sunday"
+    actions: [promote_to_memory_md, prune_sparse, generate_weekly_summary]
+
+# Index tiers
+index_tiers:
+  full_keep:    ">= 0.65"   # Keep complete text in context
+  compressed:   "0.25-0.65"  # Summary only
+  sparse:       "< 0.25"     # Pointer to file
+
+# Performance targets
+targets:
+  compression_ratio: "10x minimum"
+  retrieval_success: ">= 90%"
+  data_loss: "0%"

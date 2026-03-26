@@ -15,7 +15,8 @@
 
 | Skill / Guide | Описание |
 |-------|----------|
-| [memory-system](./memory-system/) | 🧠 Полная система памяти для AI-агента — Hippocampus Protocol, дефрагментация, anti-amnesia |
+| [hippocampus-memory](./hippocampus-memory/) | 🧠 Brain-inspired memory system — exponential decay, immunity rules, anti-amnesia, defragmentation |
+| [memory-system](./memory-system/) | 📖 Detailed memory guide in Russian |
 | [business-valuation](./business-valuation/) | AI-агент оценит твой бизнес и поможет продать на BizBuySell |
 
 ## Канал
