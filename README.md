@@ -16,6 +16,7 @@
 | Skill / Guide | Описание |
 |-------|----------|
 | [hippocampus-memory](./hippocampus-memory/) | 🧠 Brain-inspired memory system — exponential decay, immunity rules, anti-amnesia, defragmentation |
+| [web-browser-stealth](./web-browser-stealth/) | 🌐 Autonomous web browsing with anti-detect — Camoufox, CAPTCHA bypass, Cloudflare, multi-agent isolation |
 | [memory-system](./memory-system/) | 📖 Detailed memory guide in Russian |
 | [business-valuation](./business-valuation/) | AI-агент оценит твой бизнес и поможет продать на BizBuySell |
 
