@@ -11,10 +11,11 @@
 3. Напиши агенту в Telegram что нужно сделать
 4. Готово — агент всё сделает сам
 
-## Доступные skills
+## Доступные skills & guides
 
-| Skill | Описание |
+| Skill / Guide | Описание |
 |-------|----------|
+| [memory-system](./memory-system/) | 🧠 Полная система памяти для AI-агента — Hippocampus Protocol, дефрагментация, anti-amnesia |
 | [business-valuation](./business-valuation/) | AI-агент оценит твой бизнес и поможет продать на BizBuySell |
 
 ## Канал
