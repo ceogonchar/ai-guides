@@ -19,14 +19,16 @@ bash ~/clawd/skills/hippocampus-memory/scripts/install.sh
 
 Each skill includes a `scripts/install.sh` that sets up everything automatically — dependencies, configs, templates. Safe to re-run.
 
-## Доступные skills & guides
+## Available Skills
 
-| Skill / Guide | Описание |
-|-------|----------|
-| [hippocampus-memory](./hippocampus-memory/) | 🧠 Brain-inspired memory system — exponential decay, immunity rules, anti-amnesia, defragmentation |
-| [web-browser-stealth](./web-browser-stealth/) | 🌐 Autonomous web browsing with anti-detect — Camoufox, CAPTCHA bypass, Cloudflare, multi-agent isolation |
-| [memory-system](./memory-system/) | 📖 Detailed memory guide in Russian |
-| [business-valuation](./business-valuation/) | AI-агент оценит твой бизнес и поможет продать на BizBuySell |
+| Skill | Description |
+|-------|-------------|
+| [hippocampus-memory](./hippocampus-memory/) | 🧠 Brain-inspired memory system — exponential decay, immunity rules, anti-amnesia |
+| [web-browser-stealth](./web-browser-stealth/) | 🌐 Autonomous browsing — Camoufox, CAPTCHA bypass, Cloudflare, multi-agent isolation |
+| [voice-transcription](./voice-transcription/) | 🎙️ Local speech-to-text — Whisper MLX (Apple Silicon GPU) + CPU fallback |
+| [zoom-meeting-analyzer](./zoom-meeting-analyzer/) | 📋 Meeting intelligence — action items, decisions, coaching from Zoom recordings |
+| [memory-system](./memory-system/) | 📖 Detailed memory guide (Russian) |
+| [business-valuation](./business-valuation/) | 💼 AI business valuation agent |
 
 ## Channel
 
